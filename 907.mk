@@ -27,11 +27,8 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version = 131072 \
         ro.opengles.surface.rgb565=true \
-	ro.display.switch=1 \
         ro.debuggable=1 \
-	ro.sf.lcd_density=160 \
 	ro.com.google.locationfeatures=1 \
 	ro.kernel.android.checkjni=0 \
 	ro.vold.umsdirtyratio=20 \
@@ -43,9 +40,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.carrier=wifi-only \
 	debug.egl.hw=1 \
 	debug.sf.hw=1 \
-	hwui.render_dirty_regions=false \
-	wifi.interface = wlan0 \
-	wifi.supplicant_scan_interval = 180 \
 	dalvik.vm.verify-bytecode=false \
 	dalvik.vm.dexopt-flags=v=n,o=v \
 	dalvik.vm.execution-mode=int:jit \
@@ -57,18 +51,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.country=GB \
 	persist.sys.use_dithering=0 \
 	persist.sys.purgeable_assets=0 \
-	persist.sys.strictmode.visual=0 \
-	persist.sys.strictmode.disable=1 \
-	persist.sys.usb.config=mass_storage,adb \
 	persist.sys.vold.switchexternal=0 \
         persist.service.adb.enable=1 \
 	windowsmgr.max_events_per_sec=240 \
 	view.touch_slop=2 \
 	view.minimum_fling_velocity=25 \
-        rild.libpath=/system/lib/liballwinner-ril.so \
-        rild.libargs=-d /dev/ttyUSB2 \
 	telephony.lteOnCdmaDevice=0 \
-        mobiledata.interfaces=pdp0,wlan0,ppp0 \
         keyguard.no_require_sim=true \
 	logcat.live=disable \
 	net.dns1=8.8.8.8 \
@@ -103,6 +91,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	librs_jni \
         rild_sun4i
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    bluetoothd \
+    hciconfig \
+    hcitool
+
 
 # Hardware libs
 PRODUCT_PACKAGES += \
