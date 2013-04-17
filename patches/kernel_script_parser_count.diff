@@ -1,7 +1,7 @@
-diff --git a/arch/arm/plat-sunxi/sys_config.c b/arch/arm/plat-sunxi/sys_config.c
+diff --git a/kernel/softwinner/907/arch/arm/plat-sunxi/sys_config.c b/kernel/softwinner/907/arch/arm/plat-sunxi/sys_config.c
 index 2ccf2a6..d3afaa5 100644
---- a/arch/arm/plat-sunxi/sys_config.c
-+++ b/arch/arm/plat-sunxi/sys_config.c
+--- a/kernel/softwinner/907/arch/arm/plat-sunxi/sys_config.c
++++ b/kernel/softwinner/907/arch/arm/plat-sunxi/sys_config.c
 @@ -93,7 +93,8 @@ static inline int __script_prop_fetch(const char *name_s, const char *name_p,
  
  int script_parser_fetch(char *main_name, char *sub_name, int value[], int count)
