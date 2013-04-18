@@ -153,7 +153,7 @@ static void sun4i_power_set_interactive(struct power_module *module, int on)
     } else
         sysfs_write(SCALINGMAXFREQ_PATH, scaling_max_freq);
 
-    sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/input_boost",
+    sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/boost",
                 on ? "1" : "0");
 }
 
