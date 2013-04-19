@@ -27,40 +27,24 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.opengles.surface.rgb565=true \
-        ro.debuggable=1 \
 	ro.com.google.locationfeatures=1 \
-	ro.kernel.android.checkjni=0 \
-	ro.vold.umsdirtyratio=20 \
 	ro.media.dec.jpeg.memcap=20000000 \
-	ro.additionalmounts=/storage/sdcard1 \
-	ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1 \
-        ro.telephony.ril.v3=skipnullaid,skippinpukcount,skipbrokendatacall \
-	ro.config.nocheckin=1 \
-        ro.carrier=wifi-only \
-	debug.egl.hw=1 \
-	debug.sf.hw=1 \
-	dalvik.vm.verify-bytecode=false \
-	dalvik.vm.dexopt-flags=v=n,o=v \
-	dalvik.vm.execution-mode=int:jit \
 	dalvik.vm.lockprof.threshold=500 \
-	dalvik.vm.checkjni=false \
 	dalvik.vm.dexopt-data-only=1 \
-	persist.sys.timezone=Europe/London \
+	ro.vold.umsdirtyratio=20 \
+	hwui.render_dirty_regions=false \
+	persist.sys.usb.config=mass_storage,adb \
+	ro.display.switch=1 \
+	ro.opengles.version=131072 \
+	wifi.interface=wlan0 \
+	wifi.supplicant_scan_interval=60 \
+	ro.carrier=wifi-only \
+
+#Language and default location
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.timezone=Europe/Copenhagen \
 	persist.sys.language=en \
 	persist.sys.country=GB \
-	persist.sys.use_dithering=0 \
-	persist.sys.purgeable_assets=0 \
-	persist.sys.vold.switchexternal=0 \
-        persist.service.adb.enable=1 \
-	windowsmgr.max_events_per_sec=240 \
-	view.touch_slop=2 \
-	view.minimum_fling_velocity=25 \
-	telephony.lteOnCdmaDevice=0 \
-        keyguard.no_require_sim=true \
-	logcat.live=disable \
-	net.dns1=8.8.8.8 \
-	net.dns2=8.8.4.4 \
 
 DEVICE_PACKAGE_OVERLAYS := device/softwinner/907/overlay
 
