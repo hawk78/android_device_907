@@ -35,7 +35,8 @@
 /dev/ttyUSB2			  0777   system     system
 /dev/ttyUSB3			  0777   system     system
 /dev/gps                  0777   system     system
-/dev/ttyACM  		  0777   system     system
+/dev/ttyACM0  		  0777   system     system
+/dev/ttyACM1  		  0777   system     system
 
 # sysfs properties, for mma7660 gsensor
 /sys/devices/virtual/input/input*   name        0660  root   input

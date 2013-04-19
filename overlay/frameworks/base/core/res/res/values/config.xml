@@ -66,7 +66,7 @@
 
          Note: Disable SMS also disable voicemail waiting sms,
                cell broadcasting sms, and MMS. -->
-    <bool name="config_sms_capable">false</bool>
+    <bool name="config_sms_capable">true</bool>
 
     <!-- True will enable the electron beam screen-off animation. -->
     <!-- bool name="config_screenOffAnimation">true</bool -->
@@ -90,7 +90,7 @@
     
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
     
-    <bool translatable="false" name="config_wifi_p2p_support">false</bool>
+    <bool translatable="false" name="config_wifi_p2p_support">true</bool>
     
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
