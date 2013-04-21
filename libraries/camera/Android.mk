@@ -21,9 +21,9 @@ LOCAL_CFLAGS += -fno-short-enums -DQEMU_HARDWARE
 LOCAL_LDFLAGS += \
 	$(LOCAL_PATH)/libcedara_decoder.a \
 	$(LOCAL_PATH)/libjpgenc.a \
-	device/softwinner/907/prebuilt/lib/libcedarxosal.so \
-	device/softwinner/907/prebuilt//lib/libcedarv_adapter.so \
-	device/softwinner/907/prebuilt//lib/libcedarxbase.so
+	device/softwinner/907/prebuilt/lib/cedarx/libcedarxosal.so \
+	device/softwinner/907/prebuilt/lib/cedarx/libcedarv_adapter.so \
+	device/softwinner/907/prebuilt/lib/cedarx/libcedarxbase.so
 
 LOCAL_SHARED_LIBRARIES:= \
     libbinder \

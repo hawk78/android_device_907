@@ -165,3 +165,5 @@ service memsicd /system/bin/logwrapper /system/bin/memsicd
 
 on property:dev.bootcomplete=1
     write /sys/module/lowmemorykiller/parameters/minfree "2048,4096,8192,80000,90000,100000"
+### KSM
+    write /sys/kernel/mm/ksm/run 1
