@@ -1,0 +1,52 @@
+diff --git b/init.sun4i.rc a/init.sun4i.rc
+index 4e93839..475424a 100755
+--- b/init.sun4i.rc
++++ a/init.sun4i.rc
+@@ -83,6 +83,11 @@ on boot
+ 	chmod 0777  /sys/class/rfkill/rfkill0/state
+ 	write /sys/class/rfkill/rfkill0/state 0
+ 
++  # chown adequately for power HAL after insmod
++  chown system system /sys/devices/platform/mali_dev.0/boostpulse
++  chown system system /sys/module/mali/parameters/mali_boost_rate
++  chown system system /sys/module/mali/parameters/mali_boost_duration
++
+ on post-fs
+ 
+ # bluetooth power up/down interface
+diff --git b/libraries/power/power_sun4i.c a/libraries/power/power_sun4i.c
+index 0281b32..d5f885d 100644
+--- b/libraries/power/power_sun4i.c
++++ a/libraries/power/power_sun4i.c
+@@ -29,6 +29,7 @@
+ #define SCALING_GOVERNOR "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+ #define BOOSTPULSE_INTERACTIVE "/sys/devices/system/cpu/cpufreq/interactive/boostpulse"
+ #define BOOSTPULSE_ONDEMAND "/sys/devices/system/cpu/cpufreq/ondemand/boostpulse"
++#define BOOSTPULSE_MALI "/sys/devices/platform/mali_dev.0/boostpulse"
+ 
+ #define MAX_BUF_SZ  20
+ 
+@@ -155,6 +156,15 @@ static void sun4i_power_init(struct power_module *module)
+                     "50000");
+     }
+ 
++    /*
++     * Mali boost rate: 1200MHz PLL / 400MHz Mali freq, duration
++     * 500 msec.
++     */
++
++    sysfs_write("/sys/module/mali/parameters/mali_boost_rate",
++                "1200");
++    sysfs_write("/sys/module/mali/parameters/mali_boost_duration",
++                "500");
+ }
+ 
+ static int boostpulse_open(struct sun4i_power_module *sun4i)
+@@ -246,6 +256,7 @@ static void sun4i_power_hint(struct power_module *module, power_hint_t hint,
+                 pthread_mutex_unlock(&sun4i->lock);
+ 	    }
+ 
++	    sysfs_write(BOOSTPULSE_MALI, buf);
+ 	}
+         break;
+ 

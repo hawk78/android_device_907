@@ -29,7 +29,6 @@
 #define SCALING_GOVERNOR "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
 #define BOOSTPULSE_INTERACTIVE "/sys/devices/system/cpu/cpufreq/interactive/boostpulse"
 #define BOOSTPULSE_ONDEMAND "/sys/devices/system/cpu/cpufreq/ondemand/boostpulse"
-#define BOOSTPULSE_MALI "/sys/devices/platform/mali_dev.0/boostpulse"
 
 #define MAX_BUF_SZ  20
 
@@ -156,15 +155,6 @@ static void sun4i_power_init(struct power_module *module)
                     "50000");
     }
 
-    /*
-     * Mali boost rate: 1200MHz PLL / 400MHz Mali freq, duration
-     * 500 msec.
-     */
-
-    sysfs_write("/sys/module/mali/parameters/mali_boost_rate",
-                "1200");
-    sysfs_write("/sys/module/mali/parameters/mali_boost_duration",
-                "500");
 }
 
 static int boostpulse_open(struct sun4i_power_module *sun4i)
@@ -256,7 +246,6 @@ static void sun4i_power_hint(struct power_module *module, power_hint_t hint,
                 pthread_mutex_unlock(&sun4i->lock);
 	    }
 
-	    sysfs_write(BOOSTPULSE_MALI, buf);
 	}
         break;
 
