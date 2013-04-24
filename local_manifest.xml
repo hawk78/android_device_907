@@ -5,7 +5,10 @@
   <remove-project name="android_bootable_recovery"/>
 
   <remove-project name="android_device_asus_grouper"/>
+  <remove-project name="android_device_asus_tilapia"/>
+  <remove-project name="android_device_htc_endeavoru"/>
   <remove-project name="android_device_htc_msm8960-common"/>
+  <remove-project name="android_device_htc_ville"/>
   <remove-project name="android_device_sony_pepper"/>
   <remove-project name="android_device_lge_mako"/>
   <remove-project name="android_device_samsung_celox-common"/>
@@ -34,6 +37,8 @@
   <remove-project name="android_device_samsung_n7000"/>
   <remove-project name="android_device_samsung_n7100"/>
   <remove-project name="android_device_samsung_qcom-common"/>
+  <remove-project name="android_device_samsung_quincy-common"/>
+  <remove-project name="android_device_samsung_quincytmo"/>
   <remove-project name="android_device_samsung_skyrocket"/>
   <remove-project name="android_device_samsung_smdk4412-common"/>
   <remove-project name="android_device_samsung_smdk4412-qcom-common"/>
