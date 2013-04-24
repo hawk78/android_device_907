@@ -17,6 +17,7 @@
 PRODUCT_COPY_FILES := \
         device/softwinner/907/prebuilt/bin/reboot-recovery.sh:root/sbin/reboot-recovery.sh \
 	device/softwinner/907/init.rc:root/init.rc \
+	device/softwinner/907/recovery/ts/gt801_2plus1.ko:root/lib/modules/gt801_2plus1.ko
 	device/softwinner/907/initlogo.rle:root/initlogo.rle \
 	device/softwinner/907/init.sun4i.rc:root/init.sun4i.rc \
 	device/softwinner/907/init.sun4i.usb.rc:root/init.sun4i.usb.rc \
