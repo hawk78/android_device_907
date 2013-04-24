@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote  name="github" fetch="git://github.com/"/>
-  <!--<remove-project name="android_system_vold"/> -->
+  <remove-project name="android_system_vold"/>
+  <remove-project name="android_bootable_recovery"/>
 
   <remove-project name="android_device_asus_grouper"/>
   <remove-project name="android_device_htc_msm8960-common"/>
@@ -48,7 +49,8 @@
   <remove-project name="android_kernel_samsung_tuna"/>
   <remove-project name="android_kernel_samsung_msm8660-common"/>
 
+  <project remote="github" revision="twrp2.5" name="TeamWin/Team-Win-Recovery-Project" path="bootable/recovery" />
   <project remote="github" revision="sunxi-3.0" name="linux-sunxi/linux-sunxi" path="kernel/softwinner/907" />
   <project remote="github" revision="jb2" name="francescofavero/android_device_907" path="device/softwinner/907" />
-  <!--<project remote="github" revision="cm-10.1" name="ugers/android_system_vold" path="system/vold" />-->
+  <project remote="github" revision="cm-10.1" name="ugers/android_system_vold" path="system/vold" />
 </manifest>
