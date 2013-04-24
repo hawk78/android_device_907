@@ -79,34 +79,33 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles>
 
-        <EncoderProfile quality="high" fileFormat="mp4" duration="60">
-            <Video codec="h264"
-                   bitRate="1000000"
-                   width="640"
-                   height="480"
-                   frameRate="30" />
+    <EncoderProfile quality="high" fileFormat="mp4" duration="60">
+      <Video codec="h264"
+             bitRate="1000000"
+             width="640"
+             height="480"
+             frameRate="30" />
 
-            <Audio codec="aac"
+      <Audio codec="aac"
                    bitRate="12200"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile>
+    </EncoderProfile>
 
-        <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
-                   bitRate="300000"
-                   width="640"
-                   height="480"
-                   frameRate="30" />
+    <EncoderProfile quality="low" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="300000"
+             width="640"
+             height="480"
+             frameRate="30" />
 
-            <Audio codec="aac"
-                   bitRate="12200"
-                   sampleRate="8000"
-                   channels="1" />
-
-        </EncoderProfile>
+      <Audio codec="aac"
+             bitRate="12200"
+             sampleRate="8000"
+             channels="1" />
+    </EncoderProfile>
         
-			<EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
+    <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="1000000"
              width="640"
@@ -163,13 +162,6 @@
         minSampleRate="8000" maxSampleRate="44100"
         minChannels="1" maxChannels="2" />
 
-    <!--
-        FIXME:
-        We do not check decoder capabilities at present
-        At present, we only check whether windows media is visible
-        for TEST applications. For other applications, we do
-        not perform any checks at all.
-    -->
     <VideoDecoderCap name="wmv" enabled="true"/>
     <AudioDecoderCap name="wma" enabled="true"/>
 </MediaSettings>
