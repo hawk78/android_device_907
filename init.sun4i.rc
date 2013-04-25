@@ -9,9 +9,8 @@ on init
 	symlink /storage/sdcard1 /mnt/extsd
 
 on fs
-    mount ext4 /dev/block/nandd /system wait ro
-    mount ext4 /dev/block/nande /data wait noatime nosuid nodev
-    mount ext4 /dev/block/nandh /cache wait noatime nosuid nodev
+	setprop ro.crypto.umount_sd false
+	mount_all /fstab.sun4i
 
 on boot	
         # Enable interactive governor
@@ -86,17 +85,21 @@ on boot
 on post-fs
 
 # bluetooth power up/down interface
-        chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-        chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+        chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+        chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
         chmod 0660 /sys/class/rfkill/rfkill0/state
-        chown bluetooth bluetooth /sys/class/rfkill/rfkill1/type
-        chown bluetooth bluetooth /sys/class/rfkill/rfkill1/state
+        chown bluetooth net_bt_stack /sys/class/rfkill/rfkill1/type
+        chown bluetooth net_bt_stack /sys/class/rfkill/rfkill1/state
         chmod 0660 /sys/class/rfkill/rfkill1/state
         write /sys/class/rfkill/rfkill0/state 0
         setprop rw.bluetooth.status "0"
 
 on post-fs-data
 	mkdir /data/misc/sensors 0777 system system
+        # change back to bluetooth from system
+        chown bluetooth net_bt_stack /data/misc/bluetooth
+
+        # Set indication (checked by vold) that we have finished this action
 	setprop vold.post_fs_data_done 1
 
 # wifi related service
@@ -144,13 +147,6 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
 
 service iprenew_eth0 /system/bin/dhcpcd -n
     class main
-    disabled
-    oneshot
-
-service hciattach /system/bin/hciattach -n -s 115200 /dev/ttyS1 rda 1500000
-    class main
-    user root
-    group bluetooth net_bt_admin
     disabled
     oneshot
 

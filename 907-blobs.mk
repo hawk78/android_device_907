@@ -15,7 +15,6 @@
 
 # /system/bin
 PRODUCT_COPY_FILES += \
-	device/softwinner/907/prebuilt/lib/hw/sensors.exDroid.so:system/lib/hw/sensors.exDroid.so \
 	device/softwinner/907/prebuilt/bin/fsck.exfat:system/bin/fsck.exfat \
 	device/softwinner/907/prebuilt/bin/mkfs.exfat:system/bin/mkfs.exfat \
 	device/softwinner/907/prebuilt/bin/mount.exfat:system/bin/mount.exfat \
@@ -62,7 +61,8 @@ PRODUCT_COPY_FILES += \
 	device/softwinner/907/prebuilt/lib/libMali.so:system/lib/libMali.so \
 	device/softwinner/907/prebuilt/lib/libUMP.so:system/lib/libUMP.so \
 	device/softwinner/907/prebuilt/lib/libMali.so:obj/lib/libMali.so \
-	device/softwinner/907/prebuilt/lib/libUMP.so:obj/lib/libUMP.so
+	device/softwinner/907/prebuilt/lib/libUMP.so:obj/lib/libUMP.so \
+	device/softwinner/907/prebuilt/lib/hw/sensors.exDroid.so:system/lib/hw/sensors.exDroid.so 
 
 # /system/usr
 PRODUCT_COPY_FILES += \
