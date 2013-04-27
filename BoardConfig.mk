@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Platform/device
 TARGET_BOARD_PLATFORM := exDroid
 TARGET_BOOTLOADER_BOARD_NAME := crane
 
@@ -41,6 +43,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/softwinner/907/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/softwinner/907/bluetooth/libbt_vndcfg.txt
 BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/softwinner/907/vibrator.c
 
+# Partition sizes; must be in decimal
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
@@ -117,7 +120,7 @@ WIFI_DRIVER_FW_PATH_AP    := ""
 WIFI_DRIVER_FW_PATH_P2P   := ""
 WIFI_DRIVER_FW_PATH_PARAM := ""
 
-TARGET_CUSTOM_WIFI := ../../hardware/realtek/wlan/wifi_realtek.c
+TARGET_CUSTOM_WIFI := device/softwinner/907/wifi_realtek.c
 
 # Beware: set only prebuilt OR source+config
 TARGET_KERNEL_SOURCE := kernel/softwinner/907/
