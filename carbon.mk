@@ -40,4 +40,4 @@ PRODUCT_LOCALES := en_US fr_FR it_IT es_ES de_DE nl_NL cs_CZ pl_PL ja_JP zh_TW z
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi TARGET_DEVICE=grouper BUILD_FINGERPRINT="google/nakasi/grouper:4.2.2/JDQ39E/402395:user/release-keys" PRIVATE_BUILD_DESC="nakasi-user 4.2.2 JDQ39E 402395 release-keys"
 
 # Allow ADB (to access dev settings)
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.secure=0 ro.debuggable=1 persist.sys.usb.config=mass_storage persist.service.adb.enable=1 rild.libpath=/system/lib/liballwinner-ril.so
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.secure=0 service.adb.enable=1 persist.sys.usb.config=mass_storage ro.debuggable=1 persist.service.adb.enable=1 rild.libpath=/system/lib/liballwinner-ril.so
