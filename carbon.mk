@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+# Inherit device configuration
 $(call inherit-product, device/softwinner/907/full_907.mk)
 $(call inherit-product, device/softwinner/907/907-blobs.mk)
 
