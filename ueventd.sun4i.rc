@@ -32,7 +32,6 @@
 /dev/block/nandf		  0666	 system		system
 /dev/ttyS1    0660    bluetooth  bluetooth
 /dev/ttyHS2     0660    bluetooth  bluetooth
-/sys/devices/system/cpu/cpufreq/interactive* ../interactive/boostpulse 0644 system system
 /dev/ttyUSB0			  0777   system     system
 /dev/ttyUSB1			  0777   system     system
 /dev/ttyUSB2			  0777   system     system
