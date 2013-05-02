@@ -4,9 +4,24 @@
   <remove-project name="android_system_vold"/>
   <remove-project name="android_bootable_recovery"/>
 
+  <remove-project name="android_kernel_motorola_omap4-kexec-common"/>
+  <remove-project name="android_kernel_motorola_omap4-common"/>
+  <remove-project name="android_device_motorola_omap4-common"/>
+  <remove-project name="android_device_motorola_solana"/>
+  <remove-project name="android_device_motorola_spyder"/>
+  <remove-project name="android_device_motorola_targa"/>
+  <remove-project name="android_device_motorola_umts_spyder"/>
+  <remove-project name="android_device_motorola_maserati"/>
+  <remove-project name="android_device_samsung_i777"/>
+  <remove-project name="VanillaNexus/android_device_samsung_t0lte"/>
+  <remove-project name="android_kernel_samsung_epicmtd"/>
+
   <remove-project name="android_device_asus_grouper"/>
   <remove-project name="android_device_asus_tilapia"/>
   <remove-project name="android_device_htc_endeavoru"/>
+  <remove-project name="android_device_htc_m7"/>
+  <remove-project name="htc-msm8960/android_device_htc_apq8064-common"/>
+  <remove-project name="htc-msm8960/android_device_htc_m7-common"/>
   <remove-project name="android_device_htc_msm8960-common"/>
   <remove-project name="android_device_htc_ville"/>
   <remove-project name="android_device_sony_pepper"/>
@@ -17,6 +32,7 @@
   <remove-project name="android_device_samsung_d2-common"/>
   <remove-project name="android_device_samsung_d2att"/>
   <remove-project name="android_device_samsung_d2cri"/>
+  <remove-project name="android_device_samsung_d710"/>
   <remove-project name="android_device_samsung_d2mtr"/>
   <remove-project name="android_device_samsung_d2spr"/>
   <remove-project name="android_device_samsung_d2tmo"/>
@@ -44,13 +60,12 @@
   <remove-project name="android_device_samsung_smdk4412-qcom-common"/>
   <remove-project name="android_device_samsung_toro"/>
   <remove-project name="android_device_samsung_toroplus"/>
-  <remove-project name="android_device_samsung_t0lte"/>
   <remove-project name="android_device_samsung_t0lteatt"/>
   <remove-project name="android_device_samsung_t0ltecdma"/>
   <remove-project name="android_device_samsung_t0ltetmo"/>
   <remove-project name="android_device_samsung_tuna"/>
   <remove-project name="android_kernel_asus_grouper"/>
-  <remove-project name="android_kernel_htc_msm8960"/>
+  <remove-project name="htc-msm8960/android_kernel_htc_msm8960"/>
   <remove-project name="lge-kernel-mako"/>
   <remove-project name="scotthartbti/cm_samsung_kernel_dempsey"/>
   <remove-project name="android_kernel_htc_endeavoru"/>
