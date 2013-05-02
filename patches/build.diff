@@ -1,5 +1,5 @@
---- build/core/Makefile.orig	2013-05-02 13:27:47.151022259 +0200
-+++ build/core/Makefile	2013-05-02 13:28:59.861263356 +0200
+--- a/build/core/Makefile	2013-05-02 13:27:47.151022259 +0200
++++ b/build/core/Makefile	2013-05-02 13:28:59.861263356 +0200
 @@ -1331,7 +1331,6 @@
  	$(OTA_FROM_TARGET_SCRIPT) -v \
  	   -p $(HOST_OUT) \
