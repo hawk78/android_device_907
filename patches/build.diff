@@ -1,10 +1,10 @@
 --- a/build/core/Makefile	2013-05-02 13:27:47.151022259 +0200
 +++ b/build/core/Makefile	2013-05-02 13:28:59.861263356 +0200
-@@ -1331,7 +1331,6 @@
+@@ -1331,7 +1331,5 @@
  	$(OTA_FROM_TARGET_SCRIPT) -v \
  	   -p $(HOST_OUT) \
  	   -k $(KEY_CERT_PAIR) \
 -	   --no_assert=$(skip_assert) \
- 	   --persist=$(persist) \
+- 	   --persist=$(persist) \
  	   --override_device=$(override_device) \
  	   --backup=$(backuptool) \
