@@ -61,8 +61,7 @@ PRODUCT_COPY_FILES += \
 	device/softwinner/907/prebuilt/lib/libMali.so:system/lib/libMali.so \
 	device/softwinner/907/prebuilt/lib/libUMP.so:system/lib/libUMP.so \
 	device/softwinner/907/prebuilt/lib/libMali.so:obj/lib/libMali.so \
-	device/softwinner/907/prebuilt/lib/libUMP.so:obj/lib/libUMP.so \
-	device/softwinner/907/prebuilt/lib/hw/sensors.exDroid.so:system/lib/hw/sensors.exDroid.so 
+	device/softwinner/907/prebuilt/lib/libUMP.so:obj/lib/libUMP.so 
 
 # /system/usr
 PRODUCT_COPY_FILES += \

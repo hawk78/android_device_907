@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(findstring bma250, $(SW_BOARD_USES_GSENSOR_TYPE)), )
+ifeq ($(SW_BOARD_USES_GSENSOR_TYPE), bma250)
 
 LOCAL_PATH := $(call my-dir)
 
