@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 --- a/build/core/Makefile	2013-05-02 16:11:39.366646305 +0200
 +++ b/build/core/Makefile	2013-05-02 16:12:01.795496897 +0200
 @@ -1331,8 +1331,6 @@
+=======
+diff --git a/build/core/Makefile b/build/core/Makefile
+--- a/build/core/Makefile	2013-04-01 00:13:21.026412279 +0200
++++ b/build/core/Makefile	2013-04-02 03:08:10.240805615 +0200
+@@ -1325,7 +1325,6 @@
+>>>>>>> parent of 165d375... update build patch to apply current carbon dev changes
  	$(OTA_FROM_TARGET_SCRIPT) -v \
  	   -p $(HOST_OUT) \
  	   -k $(KEY_CERT_PAIR) \
 -	   --no_assert=$(skip_assert) \
+<<<<<<< HEAD
 -	   --persist=$(persist) \
+=======
+>>>>>>> parent of 165d375... update build patch to apply current carbon dev changes
  	   --override_device=$(override_device) \
  	   --backup=$(backuptool) \
  	   $(BUILT_TARGET_FILES_PACKAGE) $@
