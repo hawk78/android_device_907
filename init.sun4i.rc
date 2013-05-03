@@ -37,6 +37,8 @@ on boot
 	# gpu drivers
 	insmod /system/lib/modules/ump.ko
 	insmod /system/lib/modules/mali.ko
+	# display ioctl wrapper
+	insmod /system/lib/disp_ump.ko
 	# touchscreen drivers
 	insmod /system/lib/modules/goodix_hack.ko
 	insmod /system/lib/modules/ft5x_ts.ko
