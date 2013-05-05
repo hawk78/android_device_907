@@ -85,7 +85,11 @@ PRODUCT_COPY_FILES += \
 	device/softwinner/907/prebuilt/lib/cedarx/librtmp.so:system/lib/librtmp.so \
 	device/softwinner/907/prebuilt/lib/cedarx/libstagefright_soft_cedar_h264dec.so:system/lib/libstagefright_soft_cedar_h264dec.so \
 	device/softwinner/907/prebuilt/lib/cedarx/libswdrm.so:system/lib/libswdrm.so \
-	device/softwinner/907/prebuilt/lib/cedarx/libve.so:system/lib/libve.so\
+	device/softwinner/907/prebuilt/lib/cedarx/libve.so:system/lib/libve.so \
+	device/softwinner/907/prebuilt/lib/cedarx/libdemux_rmvb.so:system/lib/libdemux_rmvb.so \
+	device/softwinner/907/prebuilt/lib/cedarx/librm.so:system/lib/librm.so \
+	device/softwinner/907/prebuilt/lib/cedarx/libswa1.so:system/lib/libswa1.so \
+	device/softwinner/907/prebuilt/lib/cedarx/libswa2.so:system/lib/libswa2.so \
 
 #wlan
 PRODUCT_PACKAGES += \

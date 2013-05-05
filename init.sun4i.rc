@@ -38,7 +38,7 @@ on boot
 	insmod /system/lib/modules/ump.ko
 	insmod /system/lib/modules/mali.ko
 	# display ioctl wrapper
-	insmod /system/lib/disp_ump.ko
+	insmod /system/lib/modules/disp_ump.ko
 	# touchscreen drivers
 	insmod /system/lib/modules/goodix_hack.ko
 	insmod /system/lib/modules/ft5x_ts.ko
@@ -100,7 +100,6 @@ on post-fs-data
 	mkdir /data/misc/sensors 0777 system system
         # change back to bluetooth from system
         chown bluetooth net_bt_stack /data/misc/bluetooth
-
         # Set indication (checked by vold) that we have finished this action
 	setprop vold.post_fs_data_done 1
 
