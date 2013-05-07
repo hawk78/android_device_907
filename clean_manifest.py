@@ -67,5 +67,6 @@ def main():
    manifest_removed = add_to_local_manifest(project_names, local_xml = args.local)
    #manifest_removed.write(sys.stdout, encoding='utf-8')
    print prettify(manifest_removed)
+
 if __name__ == "__main__":
    main()
