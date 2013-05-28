@@ -37,6 +37,8 @@
 /dev/ttyUSB2			  0777   system     system
 /dev/ttyUSB3			  0777   system     system
 /dev/gps                  0777   system     system
+/dev/pa_dev  		  	  0777	 system	    system
+/dev/dmard06            0777 system     system
 /dev/ttyACM0  		  0777   system     system
 /dev/ttyACM1  		  0777   system     system
 
@@ -49,9 +51,6 @@
 #mxc622x
 /dev/mxc622x			  0777   system     system
 /dev/ecompass_ctrl		  0777   system     system
-
-#dmard06 revent --- masterx66
-/dev/dmard06            0777 system     system
 
 # dvb-usb
 /dev/dvb*   0666  system    system

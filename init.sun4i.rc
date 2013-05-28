@@ -150,6 +150,12 @@ service iprenew_eth0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
+    
+service u3gmonitor /system/bin/u3gmonitor
+    class main
+    user root
+    group root
+    oneshot
 
 service memsicd /system/bin/logwrapper /system/bin/memsicd
    class troy

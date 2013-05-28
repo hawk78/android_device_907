@@ -4,9 +4,9 @@
 # This is a common source of Android security bugs.
 #
 
+import /init.trace.rc
 import /init.sun4i.rc
 import /init.sun4i.usb.rc
-import /init.trace.rc
 
 on early-init
     # Set init and its forked children's oom_adj.
@@ -41,6 +41,7 @@ loglevel 3
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/telephony-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar
 
 # Backward compatibility
+    insmod /nand.ko
     symlink /system/etc /etc
     symlink /sys/kernel/debug /d
 
@@ -82,10 +83,6 @@ loglevel 3
     # Filesystem image public mount points.
     mkdir /mnt/obb 0700 root system
     mount tmpfs tmpfs /mnt/obb mode=0755,gid=1000
-
-    # Fuse public mount points.
-    mkdir /mnt/fuse 0700 root system
-    mount tmpfs tmpfs /mnt/fuse mode=0775,gid=1000
 
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/kernel/hung_task_timeout_secs 0
@@ -140,7 +137,7 @@ loglevel 3
 
 on post-fs
     # once everything is setup, no need to modify /
-    mount rootfs rootfs / ro remount
+    #mount rootfs rootfs / ro remount
     # mount shared so changes propagate into child namespaces
     mount rootfs rootfs / shared rec
     mount tmpfs tmpfs /mnt/secure private rec
@@ -154,8 +151,6 @@ on post-fs
     # This may have been created by the recovery system with odd permissions
     chown system cache /cache/recovery
     chmod 0770 /cache/recovery
-    # This may have been created by the recovery system with the wrong context.
-    restorecon /cache/recovery
 
     #change permissions on vmallocinfo so we can grab it from bugreports
     chown root log /proc/vmallocinfo
@@ -215,6 +210,21 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
     mkdir /data/local 0751 root root
+    
+    # star add for camera recorder
+    mkdir /data/camera 0777 root root
+    
+    # radio related, such as imei.conf
+    mkdir /data/misc/radio 0777 system radio
+    # radio related, 3G Data Card
+    chmod 0751 /system/etc/usb_modeswitch.sh
+    chmod 0751 /system/etc/ppp/call-pppd
+    chmod 0751 /system/etc/ppp/ip-up
+    chmod 0751 /system/etc/ppp/ip-down
+    chown radio system /system/etc/usb_modeswitch.sh
+    chown radio system /system/etc/ppp/call-pppd
+    chown radio system /system/etc/ppp/ip-up
+    chown radio system /system/etc/ppp/ip-down
 
     # For security reasons, /data/local/tmp should always be empty.
     # Do not place files or directories in /data/local/tmp
@@ -227,16 +237,9 @@ on post-fs-data
     mkdir /data/property 0700 root root
     mkdir /data/ssh 0750 root shell
     mkdir /data/ssh/empty 0700 root root
-    mkdir /data/radio 0770 radio radio
 
-    # create dalvik-cache and double-check the perms, so as to enforce our permissions
+    # create dalvik-cache, so as to enforce our permissions
     mkdir /data/dalvik-cache 0771 system system
-    chown system system /data/dalvik-cache
-    chmod 0771 /data/dalvik-cache
-
-    mkdir /cache/dalvik-cache 0771 system system
-    chown system system /cache/dalvik-cache
-    chmod 0771 /cache/dalvik-cache
 
     # create resource-cache and double-check the perms
     mkdir /data/resource-cache 0771 system system
@@ -358,11 +361,11 @@ on boot
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
     setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
-    setprop net.tcp.buffersize.lte     4096,87380,1220608,4096,16384,563200
-    setprop net.tcp.buffersize.umts    4096,87380,563200,4096,16384,110208
-    setprop net.tcp.buffersize.hspa    4096,87380,704512,4096,16384,110208
-    setprop net.tcp.buffersize.edge    4096,26280,35040,4096,16384,35040
-    setprop net.tcp.buffersize.gprs    4096,8760,11680,4096,8760,11680
+    setprop net.tcp.buffersize.lte     524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.umts    4094,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.hspa    4094,87380,262144,4096,16384,262144
+    setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
 
 # allow system to modify ksm control files
     chown root system /sys/kernel/mm/ksm/pages_to_scan
@@ -417,12 +420,16 @@ on property:selinux.reload_policy=1
     restart ueventd
     restart installd
 
-service console /system/bin/sh
+#service console /system/bin/sh
+#    class core
+#    console
+#    disabled
+#    user shell
+#    group log
+
+service console /system/bin/sh /dev/ttyS0
     class core
     console
-    disabled
-    user root
-    group root
 
 on property:ro.debuggable=1
     start console
@@ -458,9 +465,6 @@ service netd /system/bin/netd
     socket netd stream 0660 root system
     socket dnsproxyd stream 0660 root inet
     socket mdns stream 0660 root system
-
-service debuggerd /system/bin/debuggerd
-    class main
 
 service ril-daemon /system/bin/rild -l liballwinner-ril.so -- -d /dev/ttyUSB2
     class main
@@ -562,11 +566,3 @@ service mdnsd /system/bin/mdnsd
 
 on property:sys.boot_completed=1
     class_start troy
-
-# adb over network
-on property:service.adb.tcp.port=5555
-    stop adbd
-    start adbd
-on property:service.adb.tcp.port=-1
-    stop adbd
-    start adbd
