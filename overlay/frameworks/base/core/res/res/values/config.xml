@@ -90,7 +90,7 @@
     
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
     
-    <bool translatable="false" name="config_wifi_p2p_support">true</bool>
+    <bool translatable="false" name="config_wifi_p2p_support">false</bool>
     
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
