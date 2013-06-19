@@ -37,31 +37,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.additionalmounts=/storage/sdcard1 \
 	ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1 \
 	ro.config.nocheckin=1 \
-	debug.egl.hw=1 \
 	debug.sf.hw=1 \
-	dalvik.vm.verify-bytecode=false \
-	dalvik.vm.dexopt-flags=v=n,o=v \
-	dalvik.vm.execution-mode=int:jit \
 	dalvik.vm.lockprof.threshold=500 \
 	dalvik.vm.dexopt-data-only=1 \
-	ro.vold.umsdirtyratio=20 \
-	ro.carrier=wifi-only \
-
-#Language and default location
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.timezone=Europe/Copenhagen \
-	persist.sys.language=en \
-	persist.sys.country=GB \
-
-#Misc additions
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.use_dithering=0 \
-	persist.sys.purgeable_assets=0 \
 	persist.sys.vold.switchexternal=0 \
         persist.service.adb.enable=1 \
-	windowsmgr.max_events_per_sec=240 \
-	view.touch_slop=2 \
-	view.minimum_fling_velocity=25 \
         keyguard.no_require_sim=true \
 	logcat.live=disable \
 	net.dns1=8.8.8.8 \
@@ -120,7 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Device specific settings
 PRODUCT_PACKAGES += \
-    AllwinnerA10Settings
+	AllwinnerA10Settings
 
 PRODUCT_PACKAGES += \
 	librs_jni \

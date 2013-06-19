@@ -18,7 +18,8 @@
 TARGET_BOARD_PLATFORM := exDroid
 TARGET_BOOTLOADER_BOARD_NAME := crane
 
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
+CAMERA_USES_SURFACEFLINGER_CLIENT_STUB := true
 HAVE_HTC_AUDIO_DRIVER := true
 BOARD_USES_GENERIC_AUDIO := true
 BOARD_USES_GPS_TYPE := simulator
@@ -30,9 +31,9 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
 
 KBUILD_CFLAGS += -O3
+TARGET_ARCH_VARIANT_CPU := cortex-a8
 TARGET_GLOBAL_CFLAGS += -O3 -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -O3 -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 ARCH_ARM_HAVE_TLS_REGISTER := true

@@ -71,7 +71,6 @@ public class BootService extends Service  {
 
             @Override
             protected Void doInBackground(Void... args) {
-				CMDProcessor cmd = new CMDProcessor();
                 return null;
             }
             

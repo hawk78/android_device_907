@@ -99,21 +99,6 @@ public class DeviceSettings extends PreferenceActivity implements OnSharedPrefer
         mExtInternal = (CheckBoxPreference) findPreference(KEY_EXT_INT);
         mExtInternal.setChecked(getProp(PROP_EXT_INTERNAL,"0").equals("1"));
     }
-
-    private void disableOverlaysOption(int status) {
-        try {
-            IBinder flinger = ServiceManager.getService("SurfaceFlinger");
-            if (flinger != null) {
-                Parcel data = Parcel.obtain();
-                data.writeInterfaceToken("android.ui.ISurfaceComposer");
-                final int disableOverlays = status; 
-                data.writeInt(disableOverlays);
-                flinger.transact(1008, data, null, 0);
-                data.recycle();
-            }
-        } catch (RemoteException ex) {	
-        }	
-     }
 	
   private void setProp(String key,String val)
   {
