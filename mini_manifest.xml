@@ -3,6 +3,6 @@
  <remote  name="github" fetch="git://github.com/"/>
  <remove-project name="CyanogenMod/android_bootable_recovery"/>
  <project remote="github" revision="twrp2.5" name="TeamWin/Team-Win-Recovery-Project" path="bootable/recovery" />
- <project remote="github" revision="sunxi-3.0" name="linux-sunxi/linux-sunxi" path="kernel/softwinner/907" />
- <project remote="github" revision="jb2" name="francescofavero/android_device_907" path="device/softwinner/907" />
+ <project remote="github" revision="sunxi-hawk-3.0" name="hawk78/linux-sunxi" path="kernel/softwinner/907" />
+ <project remote="github" revision="carbon" name="hawk78/android_device_907" path="device/softwinner/907" />
 </manifest>

@@ -24,8 +24,8 @@ create a directory .repo/local_manifests.xml
 
 create the local_manifest.xml into the directory .repo/local_manifests/local_manifest.xml
 
-	curl https://raw.github.com/francescofavero/android_device_907/jb2/clean_manifest.py > clean_manifest.py
-	curl https://raw.github.com/francescofavero/android_device_907/jb2/mini_manifest.xml > mini_manifest.xml
+	curl https://raw.github.com/hawk78/android_device_907/carbon/clean_manifest.py > clean_manifest.py
+	curl https://raw.github.com/hawk78/android_device_907/carbon/mini_manifest.xml > mini_manifest.xml
 	python clean_manifest.py  -l mini_manifest.xml  .repo/manifest.xml > .repo/local_manifests/local_manifest.xml
 
 Syncronyze the server
