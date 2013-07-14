@@ -13,7 +13,7 @@ ro.device.screen_res=1024x768
 ro.opengles.version = 131072
 
 # default root acces
-persist.sys.root_access=3
+persist.sys.root_access=1
 
 ro.sf.lcd_density=160
 hwui.render_dirty_regions=false
