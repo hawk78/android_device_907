@@ -40,22 +40,22 @@ on boot
 	# display ioctl wrapper
 	insmod /system/lib/modules/disp_ump.ko
 	# touchscreen drivers
-	insmod /system/lib/modules/goodix_hack.ko
-	insmod /system/lib/modules/ft5x_ts.ko
-	insmod /system/lib/modules/goodix_touch_3F.ko
-	insmod /system/lib/modules/goodix_touch.ko
+	#insmod /system/lib/modules/goodix_hack.ko
+	#insmod /system/lib/modules/ft5x_ts.ko
+	#insmod /system/lib/modules/goodix_touch_3F.ko
+	#insmod /system/lib/modules/goodix_touch.ko
 	insmod /system/lib/modules/gt801_2plus1.ko
-        insmod /system/lib/modules/gt811_ts.ko
-	insmod /system/lib/modules/ssd253x-ts.ko
-	insmod /system/lib/modules/Novatek_TouchDriver.ko
-	insmod /system/lib/modules/gt82x_ts.ko
+        #insmod /system/lib/modules/gt811_ts.ko
+	#insmod /system/lib/modules/ssd253x-ts.ko
+	#insmod /system/lib/modules/Novatek_TouchDriver.ko
+	#insmod /system/lib/modules/gt82x_ts.ko
 	# gsensor drivers
 	insmod /system/lib/modules/bma250.ko
-	insmod /system/lib/modules/mecs.ko
-	insmod /system/lib/modules/mxc622x.ko
-	insmod /system/lib/modules/mma7660.ko
-	insmod /system/lib/modules/kxte9.ko
-	insmod /system/lib/modules/dmard06.ko
+	#insmod /system/lib/modules/mecs.ko
+	#insmod /system/lib/modules/mxc622x.ko
+	#insmod /system/lib/modules/mma7660.ko
+	#insmod /system/lib/modules/kxte9.ko
+	#insmod /system/lib/modules/dmard06.ko
 	# camera drivers
 	insmod /system/lib/modules/videobuf-core.ko
 	insmod /system/lib/modules/videobuf-dma-contig.ko   
@@ -71,10 +71,10 @@ on boot
 	# usb ethernet drivers
 	insmod /system/lib/modules/usbnet.ko
 	insmod /system/lib/modules/asix.ko
-	insmod /system/lib/modules/sr9600.ko
-	insmod /system/lib/modules/qf9700.ko
-	insmod /system/lib/modules/mcs7830.ko
-	insmod /system/lib/modules/rtl8150.ko
+	#insmod /system/lib/modules/sr9600.ko
+	#insmod /system/lib/modules/qf9700.ko
+	#insmod /system/lib/modules/mcs7830.ko
+	#insmod /system/lib/modules/rtl8150.ko
 	# other
 	insmod /system/lib/modules/cp2526.ko
         insmod /system/lib/modules/ssd253x_duod.ko
