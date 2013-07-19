@@ -107,4 +107,4 @@ diff --git a/frameworks/base/core/java/android/provider/MediaStore.java b/framew
 +    public static final String PLAYLIST_TYPE_MEDIA_PROVIDER = "mediaProvider";
 
      /**
-      * The name of the Intent-extra used to control the onCompletion behavior of a MovieView.
+      * The name of the Intent-extra used to control the onCompletion behavior of a MovieView.     

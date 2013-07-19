@@ -1,4 +1,4 @@
-# Copyright (C) 2008 The Android Open Source Project
+# Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,17 +16,13 @@
 LOCAL_PATH := $(call my-dir)
 
 # HAL module implemenation, not prelinked and stored in
-# hw/<OVERLAY_HARDWARE_MODULE_ID>.<ro.product.board>.so
+# hw/<GPS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 include $(CLEAR_VARS)
-LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
-
-LOCAL_C_INCLUDES += $(LOCAL_PATH) \
-  $(TARGET_HARDWARE_INCLUDE)
-	
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_SHARED_LIBRARIES := liblog libcutils
-LOCAL_SRC_FILES := display.cpp
-LOCAL_MODULE := display.$(TARGET_BOARD_PLATFORM)
-
+LOCAL_CFLAGS += -DQEMU_HARDWARE
+LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware
+LOCAL_SRC_FILES := gps.c
+LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_TAGS := debug
 include $(BUILD_SHARED_LIBRARY)

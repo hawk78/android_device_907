@@ -42,7 +42,8 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 #Bluetooth and Vibro stuff
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/softwinner/907/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/softwinner/907/bluetooth/libbt_vndcfg.txt
+BOARD_BLUEDROID_VENDOR_CONF := device/softwinner/907/bluetooth/vnd_generic_usb.txt
+BLUETOOTH_HCI_USE_USB := true
 BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/softwinner/907/vibrator.c
 
 # Partition sizes; must be in decimal
@@ -106,11 +107,12 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/softwinner/907/releasetools/
 # Wifi stuff
 BOARD_WIFI_VENDOR                := realtek
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_rtl
-BOARD_HOSTAPD_DRIVER             := WEXT
+BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_rtl
 BOARD_WLAN_DEVICE                := rtl8192cu
+SW_BOARD_USR_WIFI                := rtl8192cu
 
 WIFI_DRIVER_MODULE_NAME   := 8192cu
 WIFI_DRIVER_MODULE_PATH   := "/system/lib/modules/8192cu.ko"
