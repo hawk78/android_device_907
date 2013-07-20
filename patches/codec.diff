@@ -150,7 +150,7 @@ diff --git a/system/core/include/system/window.h b/system/core/include/system/wi
      NATIVE_WINDOW_CONNECT                   =  1,   /* deprecated */
      NATIVE_WINDOW_DISCONNECT                =  2,   /* deprecated */
 +    NATIVE_WINDOW_SETPARAMETER              = 50,
-+    NATIVE_WINDOW_GETPARAMETER              = 51
++    NATIVE_WINDOW_GETPARAMETER              = 51,
      NATIVE_WINDOW_SET_CROP                  =  3,   /* private */
      NATIVE_WINDOW_SET_BUFFER_COUNT          =  4,
      NATIVE_WINDOW_SET_BUFFERS_GEOMETRY      =  5,   /* deprecated */
